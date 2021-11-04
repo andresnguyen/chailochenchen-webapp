@@ -5,7 +5,7 @@ import Grid from "../components/Grid";
 import Helmet from "../components/Helmet";
 import PolicyCard from "../components/PolicyCard";
 import Section, { SectionBody, SectionTitle } from "../components/Section";
-import banner from "../assets/images/about.jpg";
+import banner from "../assets/images/banner/about.jpg";
 
 const About = () => {
   return (

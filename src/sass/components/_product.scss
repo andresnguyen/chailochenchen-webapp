@@ -8,7 +8,7 @@
     &__images {
         @include flex(flex-start, flex-start);
         width: 60%;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
 
         @include tablet {
             width: 80%;
@@ -28,8 +28,9 @@
 
         &__main {
             flex-grow: 1;
-            padding-top: 100%;
+            padding-top: 500px;
             position: relative;
+            margin-right: 20px;
 
             img {
                 position: absolute;

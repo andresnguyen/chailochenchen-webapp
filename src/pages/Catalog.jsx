@@ -1,26 +1,39 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react'
+import React, { useCallback, useState, useEffect, useRef, useMemo } from 'react'
 
 import Helmet from '../components/Helmet'
 import CheckBox from '../components/CheckBox'
 
 import productData from '../assets/fake-data/products'
 import category from '../assets/fake-data/category'
-import colors from '../assets/fake-data/product-color'
-import size from '../assets/fake-data/product-size'
+// import colors from '../assets/fake-data/product-color'
+// import size from '../assets/fake-data/product-size'
 import Button from '../components/Button'
 import InfinityList from '../components/InfinityList'
+import { useLocation } from 'react-router'
+import queryString from 'query-string';
+
 
 const Catalog = () => {
+    const location = useLocation();
 
-    const initFilter = {
-        category: [],
-        color: [],
-        size: []
-    }
+    const initFilter = useMemo(() => {
+        const params = queryString.parse(location.search);        
+         return {
+                category: [params.category] || [],
+                color: [],
+                size: []
+            }
+    }, [location.search])
 
+    useEffect(() => {
+        setFilter(initFilter)
+    }, [initFilter])
+
+    
     const productList = productData.getAllProducts()
 
     const [products, setProducts] = useState(productList)
+
 
     const [filter, setFilter] = useState(initFilter)
 
@@ -57,14 +70,18 @@ const Catalog = () => {
         }
     }
 
-    const clearFilter = () => setFilter(initFilter)
+    const clearFilter = () => setFilter({
+        category: [],
+        color: [],
+        size: []
+    })
 
     const updateProducts = useCallback(
         () => {
             let temp = productList
 
             if (filter.category.length > 0) {
-                temp = temp.filter(e => filter.category.includes(e.categorySlug))
+                temp = temp.filter(e => filter.category.includes(e.category))
             }
 
             if (filter.color.length > 0) {
@@ -120,7 +137,7 @@ const Catalog = () => {
                         </div>
                     </div>
 
-                    <div className="catalog__filter__widget">
+                    {/* <div className="catalog__filter__widget">
                         <div className="catalog__filter__widget__title">
                             màu sắc
                         </div>
@@ -156,7 +173,7 @@ const Catalog = () => {
                                 ))
                             }
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="catalog__filter__widget">
                         <div className="catalog__filter__widget__content">

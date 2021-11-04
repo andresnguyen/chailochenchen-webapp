@@ -29,7 +29,7 @@ const ProductView = props => {
         description: ""
     }
 
-    const [previewImg, setPreviewImg] = useState(product.image01)
+    const [previewImg, setPreviewImg] = useState(product.imageSrc)
 
     const [descriptionExpand, setDescriptionExpand] = useState(false)
 
@@ -106,18 +106,18 @@ const ProductView = props => {
     return (
         <div className="product">
             <div className="product__images">
-                <div className="product__images__list">
-                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.image01)}>
-                        <img src={product.image01} alt="" />
+                {/* <div className="product__images__list">
+                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.imageSrc)}>
+                        <img src={product.imageSrc} alt="" />
                     </div>
                     <div className="product__images__list__item" onClick={() => setPreviewImg(product.image02)}>
                         <img src={product.image02} alt="" />
                     </div>
-                </div>
+                </div> */}
                 <div className="product__images__main">
-                    <img src={previewImg} alt="" />
+                    <img src={previewImg || product.imageSrc } alt="" />
                 </div>
-                <div className={`product-description ${descriptionExpand ? 'expand' : ''}`}>
+                {/* <div className={`product-description ${descriptionExpand ? 'expand' : ''}`}>
                     <div className="product-description__title">
                         Chi tiết sản phẩm
                     </div>
@@ -129,11 +129,11 @@ const ProductView = props => {
                             }
                         </Button>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="product__info">
-                <h1 className="product__info__title">{product.title}</h1>
-                <div className="product__info__item">
+                <h1 className="product__info__title">{product.name}</h1>
+                {/* <div className="product__info__item">
                     <span className="product__info__item__price">
                         {numberWithCommas(product.price)}
                     </span>
@@ -183,13 +183,19 @@ const ProductView = props => {
                             <i className="bx bx-plus"></i>
                         </div>
                     </div>
+                </div> */}
+
+                <div className="product__info__item">
+                    <div className="product-description__content" dangerouslySetInnerHTML={{__html: "<span>Write something to description <strong>product</strong></span>"}}></div>
                 </div>
                 <div className="product__info__item">
-                    <Button onClick={() => addToCart()}>thêm vào giỏ</Button>
-                    <Button onClick={() => goToCart()}>mua ngay</Button>
+                    <Button onClick={() => addToCart()}>Link Shoppe</Button>
+                    <Button onClick={() => goToCart()}>Link Facebook</Button>
                 </div>
+
+
             </div>
-            <div className={`product-description mobile ${descriptionExpand ? 'expand' : ''}`}>
+            {/* <div className={`product-description mobile ${descriptionExpand ? 'expand' : ''}`}>
                 <div className="product-description__title">
                     Chi tiết sản phẩm
                 </div>
@@ -201,7 +207,7 @@ const ProductView = props => {
                         }
                     </Button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

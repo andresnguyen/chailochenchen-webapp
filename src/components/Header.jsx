@@ -26,7 +26,7 @@ const mainNav = [
       },
       {
         display: "Hộp, muỗng, uống hút",
-        path: "/products?category=hop-muong-uong-hut",
+        path: "/products?category=hop-muong-ong-hut",
       },
       {
         display: "Túi nylong",

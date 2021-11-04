@@ -9,7 +9,7 @@ import { set } from '../redux/product-modal/productModalSlice'
 
 import Button from './Button'
 
-import numberWithCommas from '../utils/numberWithCommas'
+import { formatToSlug } from '../utils/index'
 
 const ProductCard = ({ data }) => {
 
@@ -17,7 +17,7 @@ const ProductCard = ({ data }) => {
 
     return (
         <div className="product-card">
-            <Link to={`/catalog/${data.slug}`}>
+            <Link to={`/products/${formatToSlug(data.name, data.id)}`}>
                 <div className="product-card__image">
                     <img src={data.imageSrc} alt="" />
                     {/* <img src={data.img02} alt="" /> */}

@@ -10,7 +10,8 @@ import productData from '../assets/fake-data/products'
 
 const Product = props => {
 
-    const product = productData.getProductBySlug(props.match.params.slug)
+    const slug = props.match.params.slug.split("-")
+    const product = productData.getProductById(slug[slug.length - 1])
 
     const relatedProducts = productData.getProducts(8)
 
@@ -39,12 +40,8 @@ const Product = props => {
                         {
                             relatedProducts.map((item, index) => (
                                 <ProductCard
-                                    key={index}
-                                    img01={item.image01}
-                                    img02={item.image02}
-                                    name={item.title}
-                                    price={Number(item.price)}
-                                    slug={item.slug}
+                                    key={item.id || index}
+                                    data={item}
                                 />   
                             ))
                         }
