@@ -11,33 +11,33 @@ import Button from './Button'
 
 import numberWithCommas from '../utils/numberWithCommas'
 
-const ProductCard = props => {
+const ProductCard = ({ data }) => {
 
     const dispatch = useDispatch()
 
     return (
         <div className="product-card">
-            <Link to={`/catalog/${props.slug}`}>
+            <Link to={`/catalog/${data.slug}`}>
                 <div className="product-card__image">
-                    <img src={props.img01} alt="" />
-                    {/* <img src={props.img02} alt="" /> */}
+                    <img src={data.imageSrc} alt="" />
+                    {/* <img src={data.img02} alt="" /> */}
                 </div>
-                <h3 className="product-card__name">{props.name}</h3>
-                <div className="product-card__price">
-                    {numberWithCommas(props.price)}
+                <h3 className="product-card__name">{data.name}</h3>
+                {/* <div className="product-card__price">
+                    {numberWithCommas(data.price)}
                     <span className="product-card__price__old">
                         <del>{numberWithCommas(399000)}</del>
                     </span>
-                </div>
+                </div> */}
             </Link>
             <div className="product-card__btn">
                 <Button
                     size="sm"    
                     icon="bx bx-cart"
                     animate={true}
-                    onClick={() => dispatch(set(props.slug))}
+                    onClick={() => dispatch(set(data.slug))}
                 >
-                    chọn mua
+                    Xem chi tiết
                 </Button>
             </div>
         </div>

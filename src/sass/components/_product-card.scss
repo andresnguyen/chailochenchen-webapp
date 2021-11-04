@@ -1,6 +1,15 @@
 .product-card {
     text-align: center;
     margin-bottom: 30px;
+    box-shadow: rgba(215, 215, 215, 50%) 0px 4px 16px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+        transform: translateY(-0.0625rem);
+    }
 
     &__image {
         padding-top: 100%;
@@ -37,9 +46,7 @@
         // }
 
         &:hover {
-            &:nth-child(1) {
-                transform: scale(1);
-            } 
+
         }
     }
 
@@ -67,5 +74,6 @@
         @include tablet {
             display: none;
         }
+        margin-bottom: 10px;
     }
 }

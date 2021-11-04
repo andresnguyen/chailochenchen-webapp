@@ -8,7 +8,11 @@ import logo from '../assets/images/logo.jpg'
 
 const footerAboutLinks = [
     {
-        display: "Giới thiệu",
+        display: "Facebook",
+        path: "/about"
+    },
+    {
+        display: "Shopee",
         path: "/about"
     },
     {
@@ -16,30 +20,22 @@ const footerAboutLinks = [
         path: "/about"
     },
     {
-        display: "Tuyển dụng",
+        display: "Địa chỉ",
         path: "/about"
     },
-    {
-        display: "Tin tức",
-        path: "/about"
-    },
-    {
-        display: "Hệ thống cửa hàng",
-        path: "/about"
-    }
 ]
 
 const footerCustomerLinks = [
     {
-        display: "Chính sách đổi trả",
+        display: "Chai nhựa",
         path: "/about"
     },
     {
-        display: "Chính sách bảo hành",
+        display: "Hộp đựng sữa chua",
         path: "/about"
     },
     {
-        display: "Chính sách hoàn tiền",
+        display: "Hộp làm bánh flan",
         path: "/about"
     }
 ]
@@ -55,23 +51,17 @@ const Footer = () => {
                 >
                     <div>
                         <div className="footer__title">
-                            Tổng đài hỗ trợ
+                            Điện thoại
                         </div>
                         <div className="footer__content">
                             <p>
-                                Liên hệ đặt hàng <strong>0123456789</strong>
-                            </p>
-                            <p>
-                                Thắc mắc đơn hàng <strong>0123456789</strong>
-                            </p>
-                            <p>
-                                Góp ý, khiếu nại <strong>0123456789</strong>
+                                Hotline: 0379.031.479
                             </p>
                         </div>
                     </div>
                     <div>
                         <div className="footer__title">
-                            Về Yolo
+                            Về  CHAI LỌ CHENCHEN
                         </div>
                         <div className="footer__content">
                             {
@@ -87,7 +77,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <div className="footer__title">
-                            Chăm sóc khách hàng
+                            Về sản phẩm
                         </div>
                         <div className="footer__content">
                             {
@@ -108,7 +98,7 @@ const Footer = () => {
                             </Link>
                         </p>
                         <p>
-                            Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng triệu người tiêu dùng Việt. Hãy cùng Yolo hướng đến một cuộc sống năng động, tích cực hơn.
+                        Chuyên cung cấp SỈ & LẺ CHAI NHỰA CÁC LOẠI.
                         </p>
                     </div>
                 </Grid>
