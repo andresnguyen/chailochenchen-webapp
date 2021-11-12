@@ -13,10 +13,11 @@ import policy from '../assets/fake-data/policy'
 import productData from '../assets/fake-data/products'
 
 import banner from '../assets/images/banner.png'
+import Service from '../components/Service'
 
 const Home = () => {
     return (
-        <Helmet title="Trang chủ">
+        <Helmet title="Trang chủ - Chailo Chenchen">
             {/* hero slider */}
             <HeroSlider
                 data={heroSliderData}
@@ -28,24 +29,13 @@ const Home = () => {
 
             {/* policy section */}
             <Section>
-                <SectionBody>
-                    <Grid
-                        col={4}
-                        mdCol={2}
-                        smCol={1}
-                        gap={20}
-                    >
-                        {
-                            policy.map((item, index) => <Link key={index} to="/policy">
-                                <PolicyCard
-                                    name={item.name}
-                                    description={item.description}
-                                    icon={item.icon}
-                                />
-                            </Link>)
-                        }
-                    </Grid>
+
+            <SectionBody>
+            <div style={{padding: '40px 0px'}}>
+                    <Service />
+                </div>
                 </SectionBody>
+                
             </Section>
             {/* end policy section */}
 

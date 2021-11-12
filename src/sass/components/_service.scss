@@ -1,0 +1,31 @@
+.service {
+  display: flex;
+
+  &__image {
+    min-width: 50px;
+    margin-right: 12px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: #494949;
+    line-height: 1.3;
+
+    div {
+      margin-bottom: 5px;
+    }
+  }
+}
