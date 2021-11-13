@@ -6,8 +6,6 @@ function useProduct(props) {
     const products = useSelector(state => state.product.products)
     const isLoading = useSelector(state => state.product.isLoading)
 
-    console.log(isLoading)
-
     const getAllProducts = () => products;
 
     const getProducts = (count) => {
@@ -20,7 +18,7 @@ function useProduct(props) {
     const getProductsBySlug = (slug, count) => {
         const productList = products.filter(product => product.category === slug);
         if(count) return productList.slice(0, count)
-        return productList
+            return productList
     };
 
     const getProductById = (id) => {
@@ -29,6 +27,7 @@ function useProduct(props) {
     };
 
     if(isLoading) return []
+    if(products.length === 0) return []
     return [getAllProducts, getProducts, getProductsBySlug, getProductById]
 
 }

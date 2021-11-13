@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import productApi from "../../api/productApi";
 
 export const getAll = createAsyncThunk("product/getAll", async (payload, { dispatch }) => {
-  try {
     setIsLoading(true);
     const { data, pagination } = await productApi.getAll({
       ...payload,
@@ -10,9 +9,6 @@ export const getAll = createAsyncThunk("product/getAll", async (payload, { dispa
     });
     dispatch(setIsLoading(false));
     return data;
-  } catch (error) {
-    dispatch(setIsLoading(false));
-  }
 });
 
 const userSlice = createSlice({
@@ -25,7 +21,6 @@ const userSlice = createSlice({
   reducers: {
     logout(state) {},
     setIsLoading(state, action) {
-      console.log(action);
       state.isLoading = action.payload;
     },
   },
