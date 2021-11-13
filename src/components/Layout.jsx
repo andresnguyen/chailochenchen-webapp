@@ -10,6 +10,8 @@ import message from "../assets/images/icon_messenger.svg";
 import phoneRing from "../assets/images/phone-call-red.gif";
 import phone from "../assets/images/icon_click_to_call.svg";
 import delivery from "../assets/images/delivery-truck.svg";
+import shoppe from "../assets/images/shoppe.png";
+
 
 import Routes from "../routes/Routes";
 
@@ -62,6 +64,15 @@ const Layout = () => {
                 <div class="ctaimg">
                   <a href="tel:0387440192">
                     <img src={phone} alt="Gọi điện" />
+                  </a>
+                </div>
+              </div>
+
+              <div class="ctaitem">
+                {/* <div class="ctacontent">Gọi điện</div> */}
+                <div class="ctaimg">
+                  <a href="https://shopee.vn/changchang2612" >
+                    <img src={shoppe} alt="Shoppe" style={{borderRadius: '50%'}} />
                   </a>
                 </div>
               </div>
