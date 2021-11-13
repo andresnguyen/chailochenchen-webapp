@@ -1,13 +1,22 @@
 .section {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 
-    & > * ~ * {
-        margin-top: 70px;
-    }
+  & > * ~ * {
+    margin-top: 70px;
+  }
 
-    &__title {
-        font-size: 2rem;
-        text-transform: capitalize;
-        text-align: center;
-    }
+  &__title {
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+  }
+
+  &__view {
+    display: inline-block;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    font-size: 13px;
+  }
 }

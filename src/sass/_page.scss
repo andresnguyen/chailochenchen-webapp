@@ -82,6 +82,63 @@
     top: 13px;
     transition: all 0.5s;
   }
+  .hotline__img {
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 11;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.phone-fixed {
+  left: 15px;
+  width: auto;
+  bottom: 15px;
+  right: auto;
+  position: fixed;
+  z-index: 999;
+
+  &__content {
+    padding: 7px 12px;
+    margin-left: 0;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+    background: #eb5155;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+    transition: ease all 0.3s;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-right: 8px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    margin: 0;
+    line-height: 1.5;
+  }
 }
 
 .zalo-fixed {
@@ -96,5 +153,179 @@
   img {
     width: 50px;
     height: 50px;
+  }
+}
+.cta {
+  position: fixed;
+  right: 5px;
+  bottom: 100px;
+  width: 90px;
+  z-index: 9999;
+}
+.ctaitem {
+  position: relative;
+  visibility: visible;
+  background-color: transparent;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  z-index: 9999;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transition: visibility 0.5s;
+  left: 0;
+  bottom: 0;
+  display: block;
+}
+.ctabg {
+  width: 60px;
+  height: 60px;
+  top: 15px;
+  left: 15px;
+  position: absolute;
+  box-shadow: 0 0 0 0 #dd3333;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  -webkit-animation: zigzag 2.3s infinite ease-in-out;
+  animation: zigzag 2.3s infinite ease-in-out;
+  transition: all 0.5s;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-animuiion: zoom 1.3s infinite;
+  animation: zoom 1.3s infinite;
+}
+.ctaimg {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  top: 25px;
+  right: 25px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  -webkit-animation: zigzag 2s infinite ease-in-out;
+  animation: zigzag 2s infinite ease-in-out;
+}
+.ctaimg a {
+  display: block;
+}
+.ctacontent {
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 99px;
+  position: absolute;
+  z-index: 0;
+  top: 22px;
+  transition-duration: 2s;
+  display: none;
+  margin-left: -120px;
+  font-size: 100%;
+  width: 180px;
+  transition-duration: 2s;
+}
+.ctaitem:hover .ctacontent {
+  display: block;
+}
+.ctamobile {
+  position: fixed !important;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 99999 !important;
+}
+.mobileicon {
+  float: left;
+  text-align: center;
+  padding: 5px 0;
+  position: relative;
+  z-index: 99999 !important;
+  border-right: 1px solid #fff;
+}
+.mobileicon img {
+  width: 30px;
+}
+.mobileicon p {
+  margin-bottom: 0;
+}
+.mobileicon a {
+  color: #fff;
+}
+.mobileicon img {
+  justify-content: center;
+  -webkit-animation: zigzag 2s infinite ease-in-out;
+  animation: zigzag 2s infinite ease-in-out;
+}
+@-webkit-keyframes zigzag {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+@keyframes zigzag {
+  0% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1) skew(1deg);
+  }
+}
+@-webkit-keyframes zoom {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+@keyframes zoom {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 transparent;
   }
 }

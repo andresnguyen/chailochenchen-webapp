@@ -10,7 +10,7 @@ const service = [
     image: customer,
     title: "ĐẶT HÀNG",
     description:
-      "Bạn cần sản phẩm gấp liên hệ mình ngay qua ZALO : 0379.031.479",
+      "Bạn cần sản phẩm gấp liên hệ mình ngay qua ZALO: 0379.031.479",
   },
   {
     image: delivery,
@@ -19,9 +19,9 @@ const service = [
     description: `
             <div class="container-desc">Nếu bạn ở TP.HCM: Nhận hàng thanh toán</div>
             <div class="container-desc">Nếu bạn ở tỉnh:</div>
-            <div class="list-desc">+Giao hàng nhà xe:</div>
+            <div class="list-desc">+ Giao hàng nhà xe:</div>
             <div class="item-desc">Mình gửi hàng ra đến nhà xe xác nhận, bạn vui lòng thanh toán chuyển khoản 100% giúp mình nhé</div>
-            <div class="list-desc">+Giao hàng ship COD tận nhà:</div>
+            <div class="list-desc">+ Giao hàng ship COD tận nhà:</div>
             <div class="item-desc">Bạn chuyển cọc giúp mình phí cước mình sẽ gửi hàng cho bạn ạ</div>
         `,
   },

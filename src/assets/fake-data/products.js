@@ -194,6 +194,13 @@ const getProducts = (count) => {
   return products.slice(start, start + count);
 };
 
+const getProductsBySlug = (slug, count) => {
+  const productList = products.filter(product => product.category === slug);
+  if(count) return productList.slice(0, count)
+  return productList
+};
+
+
 const getProductById = (id) => products.find((e) => e.id == id);
 
 const getCartItemsInfo = (cartItems) => {
@@ -218,6 +225,7 @@ const productData = {
   getProducts,
   getProductById,
   getCartItemsInfo,
+  getProductsBySlug
 };
 
 export default productData;

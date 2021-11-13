@@ -11,7 +11,9 @@ const Section = props => {
 export const SectionTitle = props => {
     return (
         <div className="section__title">
-            {props.children}
+            <span>{props.children}</span>
+            {/* {props.viewElement && <span className="section__view">{props.viewElement}</span>} */}
+
         </div>
     )
 }
