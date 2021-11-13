@@ -57,8 +57,8 @@ const Layout = () => {
               <div class="ctaitem">
                 {/* <div class="ctacontent">Gọi điện</div> */}
                 <div class="ctaimg">
-                  <a href="https://shopee.vn/changchang2612" >
-                    <img src={shoppe} alt="Shoppe" target="_blank" style={{borderRadius: '50%'}} />
+                  <a href="https://shopee.vn/changchang2612" target="_blank">
+                    <img src={shoppe} alt="Shoppe" style={{borderRadius: '50%'}} />
                   </a>
                 </div>
               </div>
