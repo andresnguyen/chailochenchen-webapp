@@ -1,29 +1,29 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-
+import category from "../assets/fake-data/category";
+import heroSliderData from "../constants/banner";
+import productData from "../assets/fake-data/products";
+import Grid from "../components/Grid";
 import Helmet from "../components/Helmet";
 import HeroSlider from "../components/HeroSliderV1";
-import Section, { SectionTitle, SectionBody } from "../components/Section";
-import PolicyCard from "../components/PolicyCard";
-import Grid from "../components/Grid";
 import ProductCard from "../components/ProductCard";
-
-import heroSliderData from "../assets/fake-data/hero-slider";
-import policy from "../assets/fake-data/policy";
-import productData from "../assets/fake-data/products";
-
-import banner from "../assets/images/banner.png";
+import Section, { SectionBody, SectionTitle, SectionTitleV1 } from "../components/Section";
 import Service from "../components/Service";
-import  category from "../assets/fake-data/category";
+import useProduct from "../hooks/useProduct";
+import Loading from "../components/Loading";
+
 
 const Home = () => {
+
+  const [getAllProducts, getProducts, getProductsBySlug, getProductById] = useProduct()
+  
   return (
     <Helmet title="Trang chủ - Chailo Chenchen">
       {/* hero slider */}
       <HeroSlider
         data={heroSliderData}
         control={true}
-        auto={false}
+        auto={true}
         timeOut={5000}
       />
       {/* end hero slider */}
@@ -79,14 +79,16 @@ const Home = () => {
         </SectionBody>
       </Section> */}
 
-      {category.map((item) => (
+      {!getAllProducts && <Loading />}
+
+      {getAllProducts && category.map((item) => (
        <Fragment>
-           {    productData.getProductsBySlug(item.categorySlug, 8).length > 0 && 
+           {    getProductsBySlug && getProductsBySlug(item.category, 8).length > 0 && 
                 (<Section>
-                <SectionTitle viewElement={<Link to={item.path}>Xem thêm</Link>}>{item.display}</SectionTitle>
+                <SectionTitleV1 path={`/products?category=${item.category}`}>{item.display}</SectionTitleV1>
                 <SectionBody>
                   <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                    {productData.getProductsBySlug(item.categorySlug, 8).map((item, index) => (
+                    {getProductsBySlug(item.category, 8).map((item, index) => (
                       <ProductCard key={item.id || index} data={item} />
                     ))}
                   </Grid>

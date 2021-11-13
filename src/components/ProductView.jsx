@@ -22,7 +22,7 @@ const ProductView = props => {
         price: '',
         image01: null,
         image02: null,
-        categorySlug: "",
+        category: "",
         colors: [],
         slug: "",
         size: [],
@@ -189,8 +189,8 @@ const ProductView = props => {
                     <div className="product-description__content" dangerouslySetInnerHTML={{__html: "<span>Write something to description <strong>product</strong></span>"}}></div>
                 </div>
                 <div className="product__info__item">
-                    <Button onClick={() => addToCart()}>Link Shoppe</Button>
-                    <Button onClick={() => goToCart()}>Link Facebook</Button>
+                    <Button type="link" target="_blank" href={product.shoppeLink || "#"}>Link Shoppe</Button>
+                    <Button type="link" target="_blank" href={product.facebookLink || "#"}>Link Facebook</Button>
                 </div>
 
 

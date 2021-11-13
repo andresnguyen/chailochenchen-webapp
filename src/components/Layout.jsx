@@ -28,14 +28,6 @@ const Layout = () => {
               </div>
             </div>
             <Footer />
-            {/* <div class="hotline-fixed">
-              <a href="tel:(037)9031479" class="phone__span">
-                <div className="hotline__img">
-                  <img src={phoneRing} />
-                </div>
-                <span class="hotline__number">0379.031.479</span>
-              </a>
-            </div> */}
 
             <div className="phone-fixed">
               <div className="phone-fixed__content">
@@ -52,12 +44,6 @@ const Layout = () => {
               </div>
             </div>
 
-            {/* <div className="zalo-fixed">
-              <a>
-                <img src={zalo} />
-              </a>
-            </div> */}
-
             <div class="cta">
               <div class="ctaitem">
                 {/* <div class="ctacontent">Gọi điện</div> */}
@@ -72,7 +58,7 @@ const Layout = () => {
                 {/* <div class="ctacontent">Gọi điện</div> */}
                 <div class="ctaimg">
                   <a href="https://shopee.vn/changchang2612" >
-                    <img src={shoppe} alt="Shoppe" style={{borderRadius: '50%'}} />
+                    <img src={shoppe} alt="Shoppe" target="_blank" style={{borderRadius: '50%'}} />
                   </a>
                 </div>
               </div>

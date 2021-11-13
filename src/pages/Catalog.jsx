@@ -11,10 +11,16 @@ import Button from '../components/Button'
 import InfinityList from '../components/InfinityList'
 import { useLocation } from 'react-router'
 import queryString from 'query-string';
+import useProduct from '../hooks/useProduct'
+import Loading from '../components/Loading'
+import Empty from '../pages/Empty'
+
 
 
 const Catalog = () => {
     const location = useLocation();
+    const [getAllProducts, getProducts, getProductsBySlug, getProductById] = useProduct()
+
 
     const initFilter = useMemo(() => {
         const params = queryString.parse(location.search);        
@@ -30,7 +36,7 @@ const Catalog = () => {
     }, [initFilter])
 
     
-    const productList = productData.getAllProducts()
+    const productList = useMemo(() => getAllProducts ? getAllProducts() : [], [getAllProducts])
 
     const [products, setProducts] = useState(productList)
 
@@ -41,7 +47,7 @@ const Catalog = () => {
         if (checked) {
             switch(type) {
                 case "CATEGORY":
-                    setFilter({...filter, category: [...filter.category, item.categorySlug]})
+                    setFilter({...filter, category: [...filter.category, item.category]})
                     break
                 case "COLOR":
                     setFilter({...filter, color: [...filter.color, item.color]})
@@ -54,7 +60,7 @@ const Catalog = () => {
         } else {
             switch(type) {
                 case "CATEGORY":
-                    const newCategory = filter.category.filter(e => e !== item.categorySlug)
+                    const newCategory = filter.category.filter(e => e !== item.category)
                     setFilter({...filter, category: newCategory})
                     break
                 case "COLOR":
@@ -129,7 +135,7 @@ const Catalog = () => {
                                         <CheckBox
                                             label={item.display}
                                             onChange={(input) => filterSelect("CATEGORY", input.checked, item)}
-                                            checked={filter.category.includes(item.categorySlug)}
+                                            checked={filter.category.includes(item.category)}
                                         />
                                     </div>
                                 ))
@@ -184,11 +190,16 @@ const Catalog = () => {
                 <div className="catalog__filter__toggle">
                     <Button size="sm" onClick={() => showHideFilter()}>bộ lọc</Button>
                 </div>
-                <div className="catalog__content">
+                { !getAllProducts && <Loading /> }
+                { getAllProducts && <div className="catalog__content">
                     <InfinityList
                         data={products}
                     />
-                </div>
+                </div>}
+
+                { getAllProducts && products.length === 0 && <Empty clearFilter={clearFilter}/>}
+
+               
             </div>
         </Helmet>
     )

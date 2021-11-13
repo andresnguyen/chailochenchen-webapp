@@ -12,29 +12,30 @@ import productData from '../assets/fake-data/products'
 
 const ProductViewModal = () => {
 
-    const productSlug = useSelector((state) => state.productModal.value)
-    const dispatch = useDispatch()
+    // const productSlug = useSelector((state) => state.productModal.value)
+    // const dispatch = useDispatch()
 
-    const [product, setProduct] = useState(undefined)
+    // const [product, setProduct] = useState(undefined)
 
-    useEffect(() => {
-        setProduct(productData.getProductById(productSlug))
-    }, [productSlug]);
+    // useEffect(() => {
+    //     setProduct(productData.getProductById(productSlug))
+    // }, [productSlug]);
 
     return (
-        <div className={`product-view__modal ${product === undefined ? '' : 'active'}`}>
-            <div className="product-view__modal__content">
-                <ProductView product={product}/>
-                <div className="product-view__modal__content__close">
-                    <Button
-                        size="sm"    
-                        onClick={() => dispatch(remove())}
-                    >
-                        đóng
-                    </Button>
-                </div>
-            </div>
-        </div>
+        // <div className={`product-view__modal ${product === undefined ? '' : 'active'}`}>
+        //     <div className="product-view__modal__content">
+        //         <ProductView product={product}/>
+        //         <div className="product-view__modal__content__close">
+        //             <Button
+        //                 size="sm"    
+        //                 onClick={() => dispatch(remove())}
+        //             >
+        //                 đóng
+        //             </Button>
+        //         </div>
+        //     </div>
+        // </div>
+        <div></div>
     )
 }
 

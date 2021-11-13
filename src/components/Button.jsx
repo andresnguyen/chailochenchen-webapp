@@ -1,37 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-const Button = props => {
+const Button = (props) => {
+  const bg = props.backgroundColor ? "bg-" + props.backgroundColor : "bg-main";
 
-    const bg = props.backgroundColor ? 'bg-' + props.backgroundColor : 'bg-main'
+  const size = props.size ? "btn-" + props.size : "";
 
-    const size = props.size ? 'btn-' + props.size : ''
+  const animate = props.animate ? "btn-animate" : "";
 
-    const animate = props.animate ? 'btn-animate' : ''
+  const Component = props.type === "button" ? "button" : "a";
 
-    return (
-        <button
-            className={`btn ${bg} ${size} ${animate}`}
-            onClick={props.onClick ? () => props.onClick() : null}
-        >
-            <span className="btn__txt">{props.children}</span>
-            {
-                props.icon ? (
-                    <span className="btn__icon">
-                        <i className={`${props.icon} bx-tada`}></i>
-                    </span>
-                ) : null
-            }
-        </button>
-    )
-}
+  return (
+    <Component
+      {...props}
+      className={`btn ${bg} ${size} ${animate}`}
+      onClick={props.onClick ? () => props.onClick() : null}
+    >
+      <span className="btn__txt">{props.children}</span>
+      {props.icon ? (
+        <span className="btn__icon">
+          <i className={`${props.icon} bx-tada`}></i>
+        </span>
+      ) : null}
+    </Component>
+  );
+};
 
 Button.propTypes = {
-    backgroundColor: PropTypes.string,
-    size: PropTypes.string,
-    icon: PropTypes.string,
-    animate: PropTypes.bool,
-    onclick: PropTypes.func
-}
+  backgroundColor: PropTypes.string,
+  size: PropTypes.string,
+  icon: PropTypes.string,
+  type: PropTypes.string,
+  animate: PropTypes.bool,
+  onclick: PropTypes.func,
+};
 
-export default Button
+Button.defaultProps = {
+  type: "button",
+};
+
+export default Button;

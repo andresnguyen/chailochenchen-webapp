@@ -3,6 +3,10 @@
 
   & > * ~ * {
     margin-top: 70px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
   }
 
   &__title {
@@ -10,6 +14,23 @@
     text-transform: capitalize;
     text-align: center;
     position: relative;
+  }
+
+  &__titleV1 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    text-transform: uppercase;
+
+    a {
+      font-size: 1rem;
+      text-decoration: underline;
+      font-weight: 600;
+    }
   }
 
   &__view {

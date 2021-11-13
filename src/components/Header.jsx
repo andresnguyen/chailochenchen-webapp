@@ -1,34 +1,15 @@
 import React, { useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-
 import logo from "../assets/images/logo.jpg";
-import { category } from "../constants/product";
-
-const mainNav = [
-  {
-    display: "Trang chủ",
-    path: "/",
-  },
-  {
-    display: "Sản phẩm",
-    path: "/accessories",
-    children: category
-  },
-  {
-    display: "Thanh toán",
-    path: "/payment",
-  },
-  {
-    display: "Liên hệ",
-    path: "/about",
-  },
-];
+import { mainNav } from "../constants/product";
+import { getAll } from "../redux/product/productSlice";
 
 const Header = () => {
-  const { pathname } = useLocation();
-  const activeNav = mainNav.findIndex((e) => e.path === pathname);
-
   const headerRef = useRef(null);
+  const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const activeNav = mainNav.findIndex((e) => e.path === pathname);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -36,14 +17,18 @@ const Header = () => {
         document.body.scrollTop > 10 ||
         document.documentElement.scrollTop > 10
       ) {
-        headerRef.current.classList.add("shrink");
+        headerRef.current?.classList.add("shrink");
       } else {
-        headerRef.current.classList.remove("shrink");
+        headerRef.current?.classList.remove("shrink");
       }
     });
     return () => {
       window.removeEventListener("scroll", null);
     };
+  }, []);
+
+  useEffect(() => {
+    dispatch(getAll());
   }, []);
 
   const menuLeft = useRef(null);
@@ -80,7 +65,7 @@ const Header = () => {
                   </Link>
                 )}
 
-				{item.children && (
+                {item.children && (
                   <div to={item.path} className="header__menu__item__nav">
                     <span>{item.display}</span>
                   </div>
@@ -89,7 +74,10 @@ const Header = () => {
                 {item.children && (
                   <div className="header__menu__list-item">
                     {item.children.map((item, index) => (
-                      <Link to={item.path} className="header__menu__sub-item">
+                      <Link
+                        to={`/products?category=${item.category}`}
+                        className="header__menu__sub-item"
+                      >
                         <span>{item.display}</span>
                       </Link>
                     ))}
@@ -110,7 +98,7 @@ const Header = () => {
                         <div className="header__menu__item header__menu__right__item">
                             <i className="bx bx-user"></i>
                         </div>
-                    </div> */}
+          </div> */}
         </div>
       </div>
     </div>

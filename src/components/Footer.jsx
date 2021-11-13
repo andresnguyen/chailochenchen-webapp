@@ -1,30 +1,9 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-
 import Grid from "./Grid";
-
 import logo from "../assets/images/logo.jpg";
-import { category } from "../constants/product";
-
-const footerAboutLinks = [
-  {
-    display: "Facebook",
-    href: "https://www.facebook.com/chuyensilechailohunhuagiaresaigon",
-  },
-  {
-    display: "Shopee",
-    href: "https://shopee.vn/changchang2612",
-  },
-  {
-    display: "Liên hệ",
-    path: "/about",
-  },
-  {
-    display: "Địa chỉ",
-    path: "/about",
-  },
-];
+import category from "../assets/fake-data/category";
+import { footerAboutLinks } from '../constants/footer'
 
 const footerCustomerLinks = category
 const Footer = () => {
@@ -50,12 +29,13 @@ const Footer = () => {
               ))}
             </div>
           </div>
+          
           <div>
             <div className="footer__title">Về sản phẩm</div>
             <div className="footer__content">
               {footerCustomerLinks.map((item, index) => (
                 <p key={index}>
-                  <Link to={item.path}>{item.display}</Link>
+                  <Link to={`/products?category=${item.category}`}>{item.display}</Link>
                 </p>
               ))}
             </div>

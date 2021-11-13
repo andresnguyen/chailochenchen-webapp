@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Section = props => {
     return (
@@ -12,8 +13,15 @@ export const SectionTitle = props => {
     return (
         <div className="section__title">
             <span>{props.children}</span>
-            {/* {props.viewElement && <span className="section__view">{props.viewElement}</span>} */}
+        </div>
+    )
+}
 
+export const SectionTitleV1 = props => {
+    return (
+        <div className="section__titleV1">
+            <span>{props.children}</span>
+            <Link to={props.path}>Xem tất cả</Link>
         </div>
     )
 }

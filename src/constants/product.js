@@ -1,22 +1,48 @@
-export const category = [
+const category = [
     {
         display: "Chai nhựa",
-        path: "/products?category=chai-nhua",
+        category: "chai-nhua"
     },
     {
         display: "Hộp đựng sữa chua",
-        path: "/products?category=hop-dung-sua-chua",
+        category: "hop-dung-sua-chua"
     },
     {
         display: "Hũ đựng làm bánh flan",
-        path: "/products?category=hu-dung-lam-banh-flan",
+        category: "hu-dung-lam-banh-flan"
     },
     {
         display: "Hộp, muỗng, uống hút",
-        path: "/products?category=hop-muong-ong-hut",
+        category: "hop-muong-ong-hut"
     },
     {
         display: "Túi nylong",
-        path: "/products?category=tui-nylong",
+        category: "tui-nylong"
     },
+    {
+        display: "Nguyên liệu",
+        category: "nguyen-lieu"
+    }
 ]
+
+export const mainNav = [
+    {
+      display: "Trang chủ",
+      path: "/",
+    },
+    {
+      display: "Sản phẩm",
+      path: "/accessories",
+      children: category,
+    },
+    {
+      display: "Thanh toán",
+      path: "/payment",
+    },
+    {
+      display: "Liên hệ",
+      path: "/about",
+    },
+  ];
+
+export default category
