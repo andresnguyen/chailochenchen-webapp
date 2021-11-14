@@ -21,7 +21,7 @@ export const SectionTitleV1 = props => {
     return (
         <div className="section__titleV1">
             <span>{props.children}</span>
-            <Link to={props.path}>Xem tất cả</Link>
+            {props.path && <Link to={props.path}>Xem tất cả</Link>}
         </div>
     )
 }

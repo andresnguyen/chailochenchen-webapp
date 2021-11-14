@@ -7,16 +7,20 @@ import Grid from "../components/Grid";
 import Helmet from "../components/Helmet";
 import HeroSlider from "../components/HeroSliderV1";
 import ProductCard from "../components/ProductCard";
-import Section, { SectionBody, SectionTitle, SectionTitleV1 } from "../components/Section";
+import Section, {
+  SectionBody,
+  SectionTitle,
+  SectionTitleV1,
+} from "../components/Section";
 import Service from "../components/Service";
 import useProduct from "../hooks/useProduct";
 import Loading from "../components/Loading";
-
+import YoutubeEmbed from "../components/YoutubeEmbed";
 
 const Home = () => {
+  const [getAllProducts, getProducts, getProductsBySlug, getProductById] =
+    useProduct();
 
-  const [getAllProducts, getProducts, getProductsBySlug, getProductById] = useProduct()
-  
   return (
     <Helmet title="Trang chủ - Chailo Chenchen">
       {/* hero slider */}
@@ -34,6 +38,14 @@ const Home = () => {
           <div style={{ padding: "40px 0px" }}>
             <Service />
           </div>
+        </SectionBody>
+      </Section>
+
+      <Section>
+        <SectionTitleV1>Video Của ChaiLo ChenChen</SectionTitleV1>
+
+        <SectionBody>
+          <YoutubeEmbed embedId="ZXNKWDmgXMQ" />
         </SectionBody>
       </Section>
       {/* end policy section */}
@@ -81,22 +93,28 @@ const Home = () => {
 
       {!getAllProducts && <Loading />}
 
-      {getAllProducts && category.map((item) => (
-       <Fragment>
-           {    getProductsBySlug && getProductsBySlug(item.category, 8).length > 0 && 
-                (<Section>
-                <SectionTitleV1 path={`/products?category=${item.category}`}>{item.display}</SectionTitleV1>
-                <SectionBody>
-                  <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                    {getProductsBySlug(item.category, 8).map((item, index) => (
-                      <ProductCard key={item.id || index} data={item} />
-                    ))}
-                  </Grid>
-                </SectionBody>
-              </Section>)
-           }
-       </Fragment>
-      ))}
+      {getAllProducts &&
+        category.map((item) => (
+          <Fragment>
+            {getProductsBySlug &&
+              getProductsBySlug(item.category, 8).length > 0 && (
+                <Section>
+                  <SectionTitleV1 path={`/products?category=${item.category}`}>
+                    {item.display}
+                  </SectionTitleV1>
+                  <SectionBody>
+                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                      {getProductsBySlug(item.category, 8).map(
+                        (item, index) => (
+                          <ProductCard key={item.id || index} data={item} />
+                        )
+                      )}
+                    </Grid>
+                  </SectionBody>
+                </Section>
+              )}
+          </Fragment>
+        ))}
       {/* end new arrival section */}
 
       {/* banner

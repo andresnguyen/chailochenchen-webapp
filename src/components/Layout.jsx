@@ -53,7 +53,6 @@ const Layout = () => {
                   </a>
                 </div>
               </div>
-
               <div class="ctaitem">
                 {/* <div class="ctacontent">Gọi điện</div> */}
                 <div class="ctaimg">
@@ -62,7 +61,6 @@ const Layout = () => {
                   </a>
                 </div>
               </div>
-
               <div class="ctaitem">
                 {/* <div class="ctacontent">Zalo</div> */}
                 <div class="ctaimg">
