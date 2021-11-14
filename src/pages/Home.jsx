@@ -42,7 +42,7 @@ const Home = () => {
       </Section>
 
       <Section>
-        <SectionTitleV1>Video Của ChaiLo ChenChen</SectionTitleV1>
+        <SectionTitleV1>giới thiệu shop</SectionTitleV1>
 
         <SectionBody>
           <YoutubeEmbed embedId="ZXNKWDmgXMQ" />
