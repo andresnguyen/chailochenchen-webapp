@@ -186,7 +186,7 @@ const ProductView = props => {
                 </div> */}
 
                 <div className="product__info__item">
-                    <div className="product-description__content" dangerouslySetInnerHTML={{__html: "<span>Write something to description <strong>product</strong></span>"}}></div>
+                    <div className="product-description__content" dangerouslySetInnerHTML={{__html: product.content}}></div>
                 </div>
                 <div className="product__info__item">
                     <Button type="link" target="_blank" href={product.shoppeLink || "#"}>Link Shoppe</Button>

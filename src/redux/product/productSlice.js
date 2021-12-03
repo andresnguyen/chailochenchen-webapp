@@ -8,7 +8,7 @@ export const getAll = createAsyncThunk("product/getAll", async (payload, { dispa
       limit: 10000,
     });
     dispatch(setIsLoading(false));
-    return data;
+    return data.filter((item) => item.isActive);
 });
 
 const userSlice = createSlice({
