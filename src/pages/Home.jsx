@@ -45,7 +45,7 @@ const Home = () => {
         <SectionTitleV1>giới thiệu shop</SectionTitleV1>
 
         <SectionBody>
-          <YoutubeEmbed embedId="ZXNKWDmgXMQ" />
+          <YoutubeEmbed embedId="13BJ117IsJQ" />
         </SectionBody>
       </Section>
       {/* end policy section */}
