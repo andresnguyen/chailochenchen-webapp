@@ -1,28 +1,20 @@
 const category = [
-    {
-        display: "Chai nhựa",
-        category: "chai-nhua"
-    },
-    {
-        display: "Hộp đựng sữa chua",
-        category: "hop-dung-sua-chua"
-    },
-    {
-        display: "Hũ đựng làm bánh flan",
-        category: "hu-dung-lam-banh-flan"
-    },
-    {
-        display: "Hộp, muỗng, uống hút",
-        category: "hop-muong-ong-hut"
-    },
-    {
-        display: "Túi nylong",
-        category: "tui-nylong"
-    },
-    {
-        display: "Nguyên liệu",
-        category: "nguyen-lieu"
-    }
+  {
+      display: "Chai nhựa",
+      category: "chai-nhua"
+  },
+  {
+      display: "Ly nhựa",
+      category: "hop-dung-sua-chua"
+  },
+  {
+      display: "Hũ nhựa",
+      category: "hu-dung-lam-banh-flan"
+  },
+  {
+      display: "Túi, ống, hút, muỗng",
+      category: "hop-muong-ong-hut"
+  },
 ]
 
 export const mainNav = [

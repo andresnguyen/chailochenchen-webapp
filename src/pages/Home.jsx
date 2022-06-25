@@ -45,7 +45,7 @@ const Home = () => {
         <SectionTitleV1>giới thiệu shop</SectionTitleV1>
 
         <SectionBody>
-          <YoutubeEmbed embedId="13BJ117IsJQ" />
+          <YoutubeEmbed embedId="-umCuEjAuQA" />
         </SectionBody>
       </Section>
       {/* end policy section */}
@@ -103,7 +103,7 @@ const Home = () => {
                     {item.display}
                   </SectionTitleV1>
                   <SectionBody>
-                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                    <Grid col={5} mdCol={3} smCol={1} gap={20}>
                       {getProductsBySlug(item.category, 8).map(
                         (item, index) => (
                           <ProductCard key={item.id || index} data={item} />
