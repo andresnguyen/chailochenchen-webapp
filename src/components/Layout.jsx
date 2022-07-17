@@ -48,7 +48,7 @@ const Layout = () => {
               <div class="ctaitem">
                 {/* <div class="ctacontent">Gọi điện</div> */}
                 <div class="ctaimg">
-                  <a href="tel:0387440192">
+                  <a href="tel:0379031479">
                     <img src={phone} alt="Gọi điện" />
                   </a>
                 </div>
