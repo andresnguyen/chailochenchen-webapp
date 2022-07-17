@@ -12,7 +12,7 @@ const category = [
       category: "hu-dung-lam-banh-flan"
   },
   {
-      display: "Túi, ống, hút, muỗng",
+      display: "Túi đựng, ống hút, muỗng, vv",
       category: "hop-muong-ong-hut"
   },
 ]

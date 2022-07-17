@@ -12,7 +12,7 @@ const category = [
         category: "hu-nhua"
     },
     {
-        display: "Túi, ống, hút, muỗng",
+        display: "Túi đựng, ống hút, muỗng, vv",
         category: "tui-ong-hut-muong"
     },
 ]
